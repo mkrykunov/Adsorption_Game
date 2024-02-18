@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+  <meta charset="utf-8">
+
+  <meta name="keywords" content="Mykhaylo Krykunov, DFT, molecular orbitals, molecular symmetry, point groups, electronic configurations, configuration interaction, variational principle, impurity model, impurity Hamiltonian, Hubbard model, graphene, adsorption, hydrogen adsorption, educational online games, adsorption game, teaching molecular modeling" />
+  <title>Adsorption Game</title>
+
+  <style type="text/css">
+
+<!--
+   body {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	background-color: #A8A8A8;
+   }
+   #centerwrap {
+	width: 1000px;
+        padding: 0px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #FFFFFF;
+        font-family: Geneva, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 22px;
+   }
+   #header {
+	height: 20px;
+	width: 980px;
+        padding: 10px;
+	margin-bottom: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	background-color: #3366FF;
+        font-family: Geneva, Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 22px;
+   }
+
+   #header a:link {
+        color:#FFFF00;
+        text-decoration:none;
+   }
+   #header a:visited {
+        color:#FF00FF;
+        text-decoration:none;
+   }
+   #header a:hover {
+        color:#A8A8A8;
+        text-decoration:none;
+   }
+   #header a:active {
+        color:#FFFFFF;
+        text-decoration:none;
+   }
+
+   #mainbody {
+	width: 960px;
+        padding: 20px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #FFFFFF;
+        font-family: Geneva, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 22px;
+   }
+   #footer {
+	height: 40px;
+	width: 1000px;
+        padding: 0px;
+	margin-bottom: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	background-color: #3366FF;
+        color: #D8D8D8;
+        font-family: Geneva, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 22px;
+   }
+
+   #footer a:link {
+        color:#FFFF00;
+        text-decoration:none;
+   }
+   #footer a:visited {
+        color:#FF00FF;
+        text-decoration:none;
+   }
+   #footer a:hover {
+        color:#A8A8A8;
+        text-decoration:none;
+   }
+   #footer a:active {
+        color:#FFFFFF;
+        text-decoration:none;
+   }
+
+   #rightfooter {
+	height: 20px;
+	width: 480px;
+        padding: 10px;
+	margin-bottom: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	background-color: #3366FF;
+        font-family: Geneva, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 22px;
+        float: right;
+        text-align: right;
+   }
+   #leftfooter {
+	height: 20px;
+	width: 480px;
+        padding: 10px;
+	margin-bottom: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	background-color: #3366FF;
+        font-family: Geneva, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 22px;
+        float: left;
+   }
+
+   table
+   {
+        border-collapse:collapse;
+   }
+
+   table, td, th
+   {
+        border:1px solid black;
+        text-align:center;
+        padding:5px;
+   }
+
+   th
+   {
+        background-color: #3366FF;
+        color:white;
+   }
+
+   #backbutton {
+        height: 25px;
+        width: 70px;
+        padding: 5px;
+        position: relative;
+        bottom: 0;
+        left: 0px;
+        background-color: #3366FF;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        text-align: center;
+   }
+
+   #backbutton a:link {
+        color:#FFFF00;
+        text-decoration:none;
+   }
+   #backbutton a:visited {
+        color:#FF00FF;
+        text-decoration:none;
+   }
+   #backbutton a:hover {
+        color:#A8A8A8;
+        text-decoration:none;
+   }
+   #backbutton a:active {
+        color:#FFFFFF;
+        text-decoration:none;
+   }
+
+-->
+  </style>
+
+ </head>
+
+
+ <body>
+  <div id="centerwrap">
+
+<a name="TOP"></a>
+
+   <div id="header">
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="Game.html">Home</a> &nbsp;
+   <a href="CrashCourse.html">Crash course</a> &nbsp;
+   <a href="https://www.linkedin.com/in/mykhaylo-krykunov-ab2875132/">Contact</a>
+   </div>
+
+   <div id="mainbody">
+
+<h1 ALIGN="CENTER">Adsorption Game</h1>
+
+<p>This simple <a href='#GAME'>game</a> describes adsorption in terms of the impurity model.
+For pedagogical purposes, the impurity model is introduced with the help 
+of two well known for chemists model systems, namely, the 
+<a href="http://en.wikipedia.org/wiki/Hydrogen_atom">hydrogen atom</a> and 
+the <a href="http://en.wikipedia.org/wiki/H%C3%BCckel_method">H&uuml;ckel method</a>. 
+The adsorption is a complex process that involves many steps. 
+In order to keep things simple, we consider here only (1) the interaction of a benzene
+molecule with a hydrogen atom, which is placed above the benzene ring along 
+the C<sub>6</sub> axis of symmetry; (2) the interaction of a naphthalene
+molecule with a hydrogen atom, which is placed above naphthalene along 
+the C<sub>2</sub> axis of symmetry. 
+The resulting impurity model is constructed similar to the procedure of the ligand field theory, 
+i.e. the &pi;-orbitals of benzene or naphthalene are considered as the ligand orbitals of
+the hydrogen atom. 
+Then, the ground state energy is calculated in terms of the configuration interaction method.
+This simple model can be extended to demonstrate the hydrogen 
+adsorption on graphene fragments by extending the number of the fused benzene rings.</p>
+
+<h2 ALIGN="CENTER">Objective</h2>
+
+<p>The main goal of this <a href='#GAME'>game</a> is to introduce the configuration interaction 
+method in the form of a game as well as to present the concepts 
+of</p>
+
+<ul type="disc">
+
+<p><li>molecular orbitals</li></p>
+
+<p><li>electronic configurations</li></p>
+
+<p><li>molecular symmetry</li></p>
+
+<p><li>a variational principle</li></p>
+
+</ul>
+
+<p>in a playful form.</p>
+
+
+<h2 ALIGN="CENTER">Prerequisites</h2>
+
+
+<p>Although this program was developed for undergraduate chemistry students,
+anybody can play <a href='#GAME'>Adsorption Game</a>. However, it is desirable
+to be familiar with the above mentioned concepts in order to develop 
+the winning strategy. 
+A short introductory course into the concepts used in the game can be found 
+<a href='CrashCourse.html'>here</a>.</p>
+
+<h2 ALIGN="CENTER"><a name="MODEL">Model description</a></h2>
+
+<p>A simple impurity model used in this game contains only one correlated orbital.
+Namely, it is the hydrogen atom orbital. It means that the <a href='CrashCourse.html#TWO_E_OP'>two-electron operator</a>
+is invoked only for the doubly occupied hydrogen orbital (<a href='CrashCourse.html#HUBBARD'>Hubbard operator</a>). 
+Estimations for the numerical values of the H&uuml;ckel &pi;-orbitals are taken from the DFT calculations. 
+The process described by this model involves a chemical reaction between the benzene molecule and
+the adsorbate (<b>chemisorption</b> - a kind of <b>adsorption</b>). Such changes imply the change in the electronic structure.
+However, the molecular orbitals are not optimized for the combined hydrogen-benzene system.
+Instead, the <a href='CrashCourse.html#CI'>configuration interaction</a> is employed. 
+The matrix elements between two 
+different configurations are calculated in this model with the fully symmetric 
+<a href='CrashCourse.html#ONE_E_OP'>one-electron operator</a> involving one hydrogen and one &pi;-orbital. 
+Other details will be given elsewhere.</p>
+
+
+<h2 ALIGN="CENTER">How to play</h2>
+
+<p>You have to get as close as possible to the precalculated ground state energy 
+by selecting as many configurations as needed from the Top Left window. In order
+to increase the relative weight of a particular configuration you have to enter it
+again. It will change the trial wave function and the corresponding energy.</p>
+
+<p>You have to play quite fast, because every 20 seconds the current configuration 
+will be added to your trial wave function automatically. To increase your chances 
+to win, you can preview all configurations with their energies in the Top Left window 
+before you press Start button. It is advised to study this information before you play. 
+Each configuration consists of a set of orbitals. The red circle in the Top Left
+window is connected to the orbitals shown in the Bottom Right window.
+It is also possible to preview all orbitals before the game begins.</p>
+
+<p>The molecular orbitals are given as a hint to help you to find the non zero 
+matrix elements between two different configurations. Note that the irreducible 
+representation labels for the &pi;-orbitals of benzene are given for the D<sub>6h</sub> point 
+group, and the &pi;-orbitals of naphthalene are described in term of the C<sub>2h</sub> point
+group. You have to know the corresponding irreducible representations for the symmetry 
+of the hydrogen-benzene or hydrogen-naphthalene complex.</p>
+
+<p>Model 2 game (hydrogen-naphthalene complex) has been introduced as a next level. It is more difficult, 
+because differen configurations in the wave function can have opposite signs. 
+Therefore, an additional option has been added for the second model -
+entering configurations with a negative sign ("Subtract" button). 
+Thus, you should become familiar with the Moldel 1, before you decide to switch to the higher level.</p>
+
+<p>You can preview your results in the Bottom Left window switching between the 
+energy and wave function modes. In the last case the weights of the configurations 
+are shown. It is possible to preview all configurations added to your trial wave
+function in the Bottom Middle window by clicking on the intensity peaks. The matrix 
+element field will show the value of the matrix element between two configurations 
+shown in the Top Left and Bottom Middle windows when the game begins. The number of 
+steps is not limited in the current version of the program, but you can stop the game 
+any time and review your results.</p>
+
+
+</br>
+
+<p align=center>
+<a name="GAME">
+<img src="images/GameWindow.png" width="800"  border="0">
+</a>
+</p>
+
+
+</br> 
+
+
+<h2 ALIGN="CENTER">How to use Help mode</h2>
+
+<p>If you could not obtain the lowest energy after hundreds of steps you can use the 
+help mode to refine your strategy. The help mode contains hints in the Top Left window, 
+explaining how each configuration is related to the initial one. 
+For example, it says whether it is a single or double
+excitation from the initial configuration. Comparing this information to the 
+<a href='#MODEL'>model description</a> you can estimate which matrix element is non vanishing. 
+In order to do this you need to use the symmetry information from the Bottom Right window.
+In the help mode this window shows the irreducible representation labels for the 
+orbitals in the C<sub>6v</sub> point group. The last step is to use this information to 
+calculate the symmetry of the product of the irreducible representations for a 
+particular matrix element. All necessary information can be found in the product 
+table for the C<sub>6v</sub> point group below.</p> 
+
+<table align=center>
+<caption><b><a href="http://www.webqc.org/symmetrypointgroup-c6v.html">Product table for C<sub>6v</sub> point group</a></b></caption>
+<tr>
+<th></th>
+<th>A<sub>1</sub></th>
+<th>A<sub>2</sub></th>
+<th>B<sub>1</sub></th>
+<th>B<sub>2</sub></th>
+<th>E<sub>1</sub></th>
+<th>E<sub>2</sub></th>
+</tr>
+<tr>
+<th>A<sub>1</sub></th>
+<td>A<sub>1</sub></td>
+<td>A<sub>2</sub></td>
+<td>B<sub>1</sub></td>
+<td>B<sub>2</sub></td>
+<td>E<sub>1</sub></td>
+<td>E<sub>2</sub></td>
+</tr>
+<tr>
+<th>A<sub>2</sub></th>
+<td>A<sub>2</sub></td>
+<td>A<sub>1</sub></td>
+<td>B<sub>2</sub></td>
+<td>B<sub>1</sub></td>
+<td>E<sub>1</sub></td>
+<td>E<sub>2</sub></td>
+</tr>
+<tr>
+<th>B<sub>1</sub></th>
+<td>B<sub>1</sub></td>
+<td>B<sub>2</sub></td>
+<td>A<sub>1</sub></td>
+<td>A<sub>2</sub></td>
+<td>E<sub>2</sub></td>
+<td>E<sub>1</sub></td>
+</tr>
+<tr>
+<th>B<sub>2</sub></th>
+<td>B<sub>2</sub></td>
+<td>B<sub>1</sub></td>
+<td>A<sub>2</sub></td>
+<td>A<sub>1</sub></td>
+<td>E<sub>2</sub></td>
+<td>E<sub>1</sub></td>
+</tr>
+<tr>
+<th>E<sub>1</sub></th>
+<td>E<sub>1</sub></td>
+<td>E<sub>1</sub></td>
+<td>E<sub>2</sub></td>
+<td>E<sub>2</sub></td>
+<td>A<sub>1</sub>+A<sub>2</sub>+E<sub>2</sub></td>
+<td>B<sub>1</sub>+B<sub>2</sub>+E<sub>1</sub></td>
+</tr>
+<tr>
+<th>E<sub>2</sub></th>
+<td>E<sub>2</sub></td>
+<td>E<sub>2</sub></td>
+<td>E<sub>1</sub></td>
+<td>E<sub>1</sub></td>
+<td>B<sub>1</sub>+B<sub>2</sub>+E<sub>1</sub></td>
+<td>A<sub>1</sub>+A<sub>2</sub>+E<sub>2</sub></td>
+</tr>
+</table>
+
+<p>You have to know the <a href='CrashCourse.html#CRITERIA'>criteria for the molecular integrals to be nonzero</a>
+to make use of this table in the game.</p>
+
+
+<h2 ALIGN="CENTER">What is your score?</h2>
+
+<p>The number of steps taken to obtain the ground state energy is your score in this 
+game. The fewer steps you have taken the better.</p>
+
+
+</br> </br> </br>
+
+<div id="backbutton"><a href='#TOP'> Back to top</a></div>
+
+
+  </div>
+   <div id="footer">
+   <div id="leftfooter">
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   Last updated: February 17, 2024
+   </div>
+   <div id="rightfooter">
+   Contact: <a href="https://www.linkedin.com/in/mykhaylo-krykunov-ab2875132/">Mykhaylo Krykunov</a>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   </div>
+   </div>
+  </div>
+
+ </body>
+
+</html>
+

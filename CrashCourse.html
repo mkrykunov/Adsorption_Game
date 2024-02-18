@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+  <meta charset="utf-8">
+
+  <meta name="keywords" content="Mykhaylo Krykunov, molecular orbitals, molecular symmetry, point groups, electronic configurations, configuration interaction, impurity model, Hubbard model, educational online games, adsorption game, teaching molecular modeling" />
+  <title>Crash Course</title>
+
+  <style type="text/css">
+
+<!--
+   body {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	background-color: #A8A8A8;
+   }
+   #centerwrap {
+	width: 1000px;
+        padding: 0px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #FFFFFF;
+        font-family: Geneva, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 22px;
+   }
+   #header {
+	height: 20px;
+	width: 980px;
+        padding: 10px;
+	margin-bottom: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	background-color: #3366FF;
+        font-family: Geneva, Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 22px;
+   }
+
+   #header a:link {
+        color:#FFFF00;
+        text-decoration:none;
+   }
+   #header a:visited {
+        color:#FF00FF;
+        text-decoration:none;
+   }
+   #header a:hover {
+        color:#A8A8A8;
+        text-decoration:none;
+   }
+   #header a:active {
+        color:#FFFFFF;
+        text-decoration:none;
+   }
+
+   #mainbody {
+	width: 960px;
+        padding: 20px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #FFFFFF;
+        font-family: Geneva, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 22px;
+   }
+   #footer {
+	height: 40px;
+	width: 1000px;
+        padding: 0px;
+	margin-bottom: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	background-color: #3366FF;
+        color: #D8D8D8;
+        font-family: Geneva, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 22px;
+   }
+
+   #footer a:link {
+        color:#FFFF00;
+        text-decoration:none;
+   }
+   #footer a:visited {
+        color:#FF00FF;
+        text-decoration:none;
+   }
+   #footer a:hover {
+        color:#A8A8A8;
+        text-decoration:none;
+   }
+   #footer a:active {
+        color:#FFFFFF;
+        text-decoration:none;
+   }
+
+   #rightfooter {
+	height: 20px;
+	width: 480px;
+        padding: 10px;
+	margin-bottom: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	background-color: #3366FF;
+        font-family: Geneva, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 22px;
+        float: right;
+        text-align: right;
+   }
+   #leftfooter {
+	height: 20px;
+	width: 480px;
+        padding: 10px;
+	margin-bottom: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	background-color: #3366FF;
+        font-family: Geneva, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 22px;
+        float: left;
+   }
+
+   .table1 {
+        border-collapse:collapse;
+   }
+
+   .table1 td {
+        border:1px solid black;
+        text-align:center;
+        padding:5px;
+   }
+
+   .table1 th {
+        border:1px solid black;
+        text-align:center;
+        padding:5px;
+
+        background-color: #3366FF;
+        color:white;
+   }
+
+   .centeredImage {
+        text-align:center;
+        margin-top:0px;
+        margin-bottom:0px;
+        padding:0px;
+        font-size:large;
+        font-family:"Times New Roman", Times, serif;
+   }
+
+   .centeredFormula {
+        text-align:center;
+        font-size:large;
+        font-family:"Times New Roman", Times, serif;
+   }
+
+   #backbutton {
+        height: 25px;
+        width: 70px;
+        padding: 5px;
+        position: relative;
+        bottom: 0;
+        left: 0px;
+        background-color: #3366FF;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        text-align: center;
+   }
+
+   #backbutton a:link {
+        color:#FFFF00;
+        text-decoration:none;
+   }
+   #backbutton a:visited {
+        color:#FF00FF;
+        text-decoration:none;
+   }
+   #backbutton a:hover {
+        color:#A8A8A8;
+        text-decoration:none;
+   }
+   #backbutton a:active {
+        color:#FFFFFF;
+        text-decoration:none;
+   }
+
+-->
+  </style>
+
+ </head>
+
+<script type="text/javascript" src="exercises.js"></script>
+
+
+ <body>
+  <div id="centerwrap">
+
+<a name="TOP"></a>
+
+   <div id="header">
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="Game.html">Home</a> &nbsp;
+   <a href="CrashCourse.html">Crash course</a> &nbsp;
+   <a href="https://www.linkedin.com/in/mykhaylo-krykunov-ab2875132/">Contact</a>
+   </div>
+
+   <div id="mainbody">
+
+<h1 ALIGN="CENTER">Crash course for Adsorption Game</h1>
+
+<p>This is a very brief introduction into the electronic structure theory. It <del>covers</del>
+touches only those concepts that are used in 
+<a href="Game.html">Adsorption Game</a>,
+such as <a href="#MO">molecular orbitals</a>, <a href="#SYMMETRY">molecular symmetry and point groups</a>, 
+<a href="#CHARACTER_TABLE">character tables</a>, <a href="#CONFIGURATIONS">electronic configurations</a>
+and <a href="#CI">configuration interaction</a>. There are simple interactive questions for self-test on
+this page. Therefore, <i>javascript</i> has to be enabled to turn them on.</p>
+
+<ol>
+
+<li>
+<p>A <a name="MO">molecular orbital</a> is the one-electron wave function. Molecular orbitals are constructed 
+from the linear combinations of atomic orbitals. Suppose that two spatial 1<i>s</i> atomic orbitals (&chi;<sub>a</sub>
+and &chi;<sub>b</sub>) form two molecular orbitals (&Psi;<sub>1</sub> and &Psi;<sub>2</sub>):</p>
+
+<table align="center" width="540" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td rowspan="2"><img src="images/AO_1.jpg" width= "180"  border="0"></td>
+    <td><img src="images/MO_A.jpg" width= "180"  border="0"></td>
+    <td rowspan="2"><img src="images/AO_2.jpg" width= "180"  border="0"></td>
+  </tr>
+  <tr>
+    <td><img src="images/MO_S.jpg" width= "180"  border="0"></td>
+  </tr>
+</table>
+
+<p><b>Question:</b> What is the correct mathematical formula for the molecular orbital &Psi;<sub>2</sub>? 
+</p>
+
+<form name="form1" action="">
+<input type="radio" name="group1" value="PsiA" onClick="CheckAnswer1()">c<sub>1</sub>&chi;<sub>a</sub> - c<sub>2</sub>&chi;<sub>b</sub> <br>
+<input type="radio" name="group1" value="PsiS" onClick="CheckAnswer1()">c<sub>1</sub>&chi;<sub>a</sub> + c<sub>2</sub>&chi;<sub>b</sub>
+</form>
+
+<p>Here, c<sub>1</sub> and c<sub>2</sub> are the molecular orbital coefficients. For the case 
+c<sub>1</sub>=c<sub>2</sub> the molecular orbital &Psi;<sub>1</sub> is symmetric with respect to
+the plane that divides atoms a and b, while &Psi;<sub>2</sub> is antisymmetric.</p>
+
+</li>
+
+<li>
+
+<p>When <a name="SYMMETRY">symmetry</a> is present in a molecule, it is important to find nonzero matrix elements between two orbitals.
+For this purpose, it is necessary to know the point group of a molecule and the irreducible representations of 
+the symmetrized orbitals. For example, <i>trans</i>-butadiene falls in symmetry point group C<sub>2h</sub>. The
+<a name="CHARACTER_TABLE"><i>character table</i></a> for this point group is shown below.</p>
+
+<form name="form2" action="">
+<table id="C2h_table" class="table1" align=center>
+<a name="C2h"></a>
+<caption><b>Interactive character table for C<sub>2h</sub> point group</b></caption>
+<tr>
+<th>C<sub>2h</sub></th>
+<th><i>E</i></th>
+<th><i>C</i><sub>2</sub></th>
+<th><i>I</i></th>
+<th><i>&sigma;</i><sub>h</sub></th>
+<th colspan="2"></th>
+</tr>
+<tr>
+<th><input type="checkbox" name="option1" value="Ag" onClick="ClearC2hTable()">A<sub>g</sub></th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td><i>R</i><sub>z</sub></td>
+<td><i>x</i><sup>2</sup>,<i>y</i><sup>2</sup>,<i>z</i><sup>2</sup>,<i>xy</i></td>
+</tr>
+<tr>
+<th><input type="checkbox" name="option1" value="Bg" onClick="ClearC2hTable()">B<sub>g</sub></th>
+<td>1</td>
+<td>-1</td>
+<td>1</td>
+<td>-1</td>
+<td><i>R</i><sub>x</sub>,<i>R</i><sub>y</sub></td>
+<td><i>xz</i>,<i>yz</i></td>
+</tr>
+<tr>
+<th><input type="checkbox" name="option1" value="Au" onClick="ClearC2hTable()">A<sub>u</sub></th>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+<td><i>z</i></td>
+<td></td>
+</tr>
+<tr>
+<th><input type="checkbox" name="option1" value="Bu" onClick="ClearC2hTable()">B<sub>u</sub></th>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+<td>1</td>
+<td><i>x</i>,<i>y</i></td>
+<td></td>
+</tr>
+<tr>
+<th><button type="button" onClick="MultiplyIrreps()">Multiply</button></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</form>
+
+<p>In the character table each irreducible representation (rows: A<sub>g</sub>, B<sub>g</sub>,
+A<sub>u</sub>, B<sub>u</sub>) describes how such an orbital transforms 
+under a specific symmetry operation (columns: <i>E</i>, <i>C</i><sub>2</sub>,
+<i>I</i>, <i>&sigma;</i><sub>h</sub>). The additional information in the last two
+columns of the character table tells how a specific operator, for example, 
+<i>z</i>-component of the electric dipole moment transforms. The molecular 
+&pi;-orbitals of <i>trans</i>-butadiene with the corresponding irreducible representation labels are schematically 
+shown below.</p>
+
+<p class="centeredImage">&phi;<sub>4</sub>(B<sub>g</sub>) :
+<img src="images/Butadiene_Psi4.png" width="223"  border="0"></p>
+
+<p class="centeredImage">&phi;<sub>3</sub>(A<sub>u</sub>) :
+<img src="images/Butadiene_Psi3.png" width="246"  border="0"></p>
+
+<p class="centeredImage">&phi;<sub>2</sub>(B<sub>g</sub>) :
+<img src="images/Butadiene_Psi2.png" width="243"  border="0"></p>
+
+<p class="centeredImage">&phi;<sub>1</sub>(A<sub>u</sub>) :
+<img src="images/Butadiene_Psi1.png" width="221"  border="0"></p>
+
+<p>The radius of the projections for 2<i>p</i><sub>z</sub> atomic orbitals is proportional to their contribution 
+into a molecular orbital. Note, that <i>z</i>-axis is perpendicular to the screen plane. 
+Therefore, all four orbitals are antisymmetric with respect to the
+<i>&sigma;</i><sub>h</sub> plane. Further, &phi;<sub>2</sub> and 
+&phi;<sub>4</sub> orbitals change sign after rotation around the 
+<i>C</i><sub>2</sub> axis.</p>
+
+<p><b>Question:</b> Is &phi;<sub>4</sub> orbital symmetric or antisymmetric
+with respect to the center of inversion (<i>I</i>) ?</p>
+
+<form name="form3" action="">
+<input type="radio" name="group2" value="Symmetric" onClick="CheckAnswer2()">Symmetric <br>
+<input type="radio" name="group2" value="Antisymmetric" onClick="CheckAnswer2()">Antisymmetric
+</form>
+
+</li>
+
+<li>
+
+<p>The character table can be used to answer whether the integral of the form</p>
+
+<p class="centeredFormula">I = &int; &phi;<sub>i</sub> <b>A</b> &phi;<sub>j</sub> d<i>V</i></p>
+
+<p>vanishes or not. Here, <b>A</b> is an operator. The <a name="CRITERIA"><i>criteria for non vanishing integrals</i></a> 
+is the following: the product of the irreducible representations</p>
+
+<p class="centeredFormula">&Gamma;(&phi;<sub>i</sub>) &Gamma;(<b>A</b>) &Gamma;(&phi;<sub>j</sub>)<p>
+
+<p>must contain the fully symmetric irreducible representation. In the case of the C<sub>2h</sub>
+point group, it is A<sub>g</sub>. For example, if an operator <b>A</b> transforms according to A<sub>g</sub>,
+then the matrix element between &phi;<sub>1</sub> and &phi;<sub>4</sub> is zero, because</p>
+
+<p class="centeredFormula">&Gamma;(&phi;<sub>1</sub>) &Gamma;(<b>A</b>) &Gamma;(&phi;<sub>4</sub>)
+= A<sub>u</sub> A<sub>g</sub> B<sub>g</sub> = B<sub>u</sub> &ne; A<sub>g</sub></p>
+
+<p>Now by making use of the <a href='#C2h'>C<sub>2h</sub> character table</a> answer the following
+
+<p><b>Question:</b> Does the transition</p>
+
+<p class="centeredFormula"> &int; &phi;<sub>1</sub> <i>x</i> &phi;<sub>4</sub> d<i>V</i></p>
+
+<p>have a nonzero intensity?</p>
+
+<form name="form4" action="">
+<input type="radio" name="group3" value="Yes" onClick="CheckAnswer3()">Yes, it has a nonzero intensity <br>
+<input type="radio" name="group3" value="No" onClick="CheckAnswer3()">No, it doesn't
+</form>
+
+</li>
+
+<li>
+
+<p>So far we have been considering only one-electron wave functions - molecular orbitals. 
+Many-electron wave functions can be constructed from the molecular orbitals. However, 
+there are certain constraints for multi-electron wave functions. They must be antisymmetric
+with respect to the permutation of any pair of electrons. For example, a simple 
+product of orbitals</p>
+
+<p class="centeredFormula"> &Psi;(1,2) = &phi;<sub>1</sub>(1) &phi;<sub>2</sub>(2)</p>
+
+<p>can not be a true multi-electron wave function. The correct wave function
+would be</p>
+
+<p class="centeredFormula"> &Psi;(1,2) = &phi;<sub>1</sub>(1) &phi;<sub>2</sub>(2)
+- &phi;<sub>1</sub>(2) &phi;<sub>2</sub>(1) .</p>
+
+<p>The wave function must be normalized to the number of electrons:</p>
+
+<p class="centeredFormula"> &int; &Psi;<sup>*</sup>(1,2) &Psi;(1,2) d<i>V</i><sub>1</sub> d<i>V</i><sub>2</sub>
+= 2 .</p>
+
+<p>This condition introduces the normalization constant, N<sub>c</sub></p>
+
+<p class="centeredFormula"> &Psi;(1,2) = N<sub>c</sub> (&phi;<sub>1</sub>(1) &phi;<sub>2</sub>(2)
+- &phi;<sub>1</sub>(2) &phi;<sub>2</sub>(1)) .</p>
+
+<p><a name="CONFIGURATIONS">Note,</a> that the number of orbitals in &Psi;(1,2) is the same as the number of electrons.
+If &Psi;(1,2) is the ground state, &phi;<sub>1</sub> and &phi;<sub>2</sub> are the occupied
+orbitals. When the number of orbitals exceeds the number of electrons, these additional (or virtual)
+orbitals can be used to construct the excited states wave functions (or 
+<i>electronic configurations</i>), for example, a single excited state:</p>
+
+<p class="centeredFormula"> &Psi;'(1,2) = N<sub>c</sub> (&phi;<sub>1</sub>(1) &phi;<sub>3</sub>(2)
+- &phi;<sub>1</sub>(2) &phi;<sub>3</sub>(1)) ,</p>
+
+<p>and a double excited state:</p>
+
+<p class="centeredFormula"> &Psi;''(1,2) = N<sub>c</sub> (&phi;<sub>3</sub>(1) &phi;<sub>4</sub>(2)
+- &phi;<sub>3</sub>(2) &phi;<sub>4</sub>(1)) .</p>
+
+<p>There are six configurations all in all for the case of two electrons and four orbitals. They
+are listed in the table below.</p>
+
+<table class="table1" align=center>
+<tr>
+<th>#</th>
+<th>&phi;<sub>1</sub></th>
+<th>&phi;<sub>2</sub></th>
+<th>&phi;<sub>3</sub></th>
+<th>&phi;<sub>4</sub></th>
+<th></th>
+</tr>
+<tr>
+<th>1</th>
+<td>1</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td style='font-size:large; font-family:"Times New Roman", Times, serif;'>&Psi;(1,2)</td>
+</tr>
+<tr>
+<th>2</th>
+<td>1</td>
+<td></td>
+<td>1</td>
+<td></td>
+<td style='font-size:large; font-family:"Times New Roman", Times, serif;'>&Psi;'(1,2)</td>
+</tr>
+<tr>
+<th>3</th>
+<td>1</td>
+<td></td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<th>4</th>
+<td></td>
+<td>1</td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>5</th>
+<td></td>
+<td>1</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<th>6</th>
+<td></td>
+<td></td>
+<td>1</td>
+<td>1</td>
+<td style='font-size:large; font-family:"Times New Roman", Times, serif;'>&Psi;''(1,2)</td>
+</tr>
+</table>
+
+<p>However, you need to remember that each electron has a spin. Therefore, each orbital 
+&phi;<sub>i</sub> (or more correctly, a spin-orbital) in the above table contains the 
+spatial and the spin part:</p>
+
+<p class="centeredFormula">&phi;(1) = &chi;(1)&sigma;(1) ,</p>
+
+<p>where the spin projection &sigma; can have two values: &sigma;=+1/2,-1/2 or 
+&sigma;=&alpha;,&beta; or &sigma;=&uarr;,&darr;.
+In order to see how the number of the electronic configurations grows with an increase of
+the number of orbitals, you can do the following</p>
+
+<p><b>Exercise</b>: enter all possible configurations for the case of two electrons and six 
+spin-orbitals into the table below:</p>
+
+<form name="form5" action="">
+<table id="Configs" class="table1" align=center>
+<caption><b>Interactive table for the configurations containing two electrons</b></caption>
+<tr>
+<th><button type="button" onClick="EnterConfig('Configs')">Enter</button></th>
+<th><input type="checkbox" name="option2" value="phi_1">&phi;<sub>1</sub></th>
+<th><input type="checkbox" name="option2" value="phi_2">&phi;<sub>2</sub></th>
+<th><input type="checkbox" name="option2" value="phi_3">&phi;<sub>3</sub></th>
+<th><input type="checkbox" name="option2" value="phi_4">&phi;<sub>4</sub></th>
+<th><input type="checkbox" name="option2" value="phi_5">&phi;<sub>5</sub></th>
+<th><input type="checkbox" name="option2" value="phi_6">&phi;<sub>6</sub></th>
+</tr>
+</table>
+</form>
+
+
+<p><a name="CI">Sometimes,</a> it is necessary to include several configurations into a wave function.
+For example, when the energies of the bonding and anti-bonding orbitals are getting very close to each 
+other in the stretched hydrogen molecule</p>
+
+<p class="centeredImage"><img src="C:\Users\Misha\Java\Game\images\H2_CI.gif" width="238"  border="0"></p>
+
+<p>both configurations should be included into the wave function:</p>
+
+<p class="centeredFormula"> &Phi;(1,2) = a &Psi;(1,2) + b &Psi;''(1,2) .</p>
+
+<p>Then, the coefficients a and b are found from the <i>configuration interaction</i> method.</p>
+
+</li>
+
+<li>
+
+<p>It is convenient to express the configuration interaction equations in the second quantization operators
+(c<sup>&dagger;</sup><sub>k&sigma;</sub> and c<sub>k&sigma;</sub>), which are defined as follows. 
+The operator c<sup>&dagger;</sup><sub>k&sigma;</sub> creates an electron on the spatial orbital &phi;<sub>k</sub> 
+with the spin projection &sigma; (&sigma;=&alpha;,&beta; or &sigma;=&uarr;,&darr;). For example:</p>
+
+<p class="centeredImage"><img src="images/c1a_plus_op.png" width="486"  border="0"></p>
+
+<p>The operator c<sub>k&sigma;</sub> annihilates an electron on the spatial orbital &phi;<sub>k</sub> with the spin projection &sigma;.
+For example:</p>
+
+<p class="centeredImage"><img src="images/c1a_op.png" width="486"  border="0"></p>
+
+<p>Additionally, an electron can not be created twice on the same spatial 
+orbital  &phi;<sub>k</sub> and with the same spin projection &sigma;:</p>
+
+<p class="centeredImage"><img src="images/c1a_plus_op_0.png" width="309"  border="0"></p>
+
+<p>When the annihilation operator acts on an empty orbital, the result is also zero:</p>
+
+<p class="centeredImage"><img src="images/c1a_op_0.png" width="312"  border="0"></p>
+
+<p>As we can see, these operators change the number of electrons in a molecule. 
+However, we need to describe promotions of electrons to vacant orbitals.
+In other words, it is necessary to have such products of the creation and annihilation
+operators that describe the interaction of different configurations containing the same
+number of electrons. We can accomplish this with the help of the following one- and two-electron operators. 
+The <a name="ONE_E_OP"><i>one-electron operator</i></a> (c<sup>&dagger;</sup><sub>i&sigma;</sub> c<sub>j&sigma;</sub>) 
+describes electron hops (or excitations) of a single electron from one orbital to another:</p>
+
+<p class="centeredImage"><img src="images/c2a_plus_c1a_op.png" width="524"  border="0"></p>
+
+<p><b>Question:</b> Can the following two configurations</p>
+
+<p class="centeredImage"><img src="images/one_op_question.png" width="448"  border="0"></p>
+
+<p>be transformed into each other by any one-electron operator?</p>
+
+<form name="form6" action="">
+<input type="radio" name="group4" value="Yes" onClick="CheckAnswer4()">Yes, they can. <br>
+<input type="radio" name="group4" value="No" onClick="CheckAnswer4()">No, they can't.
+</form>
+
+<p>The last ingredient necessary for the calculation of the one-electron
+operator matrix elements between two configurations is the weight of the product 
+of the creation/annihilation operators:</p>
+
+<p class="centeredFormula"> <i>h</i><sub>ij</sub> = 
+(&int; &phi;<sub>i</sub> <b>h</b> &phi;<sub>j</sub> d<i>V</i>)
+c<sup>&dagger;</sup><sub>i&sigma;</sub> c<sub>j&sigma;</sub></p>
+
+<p>As for the <a name="TWO_E_OP"><i>two-electron operators</i></a>, they consist of two creation and two annihilation operators
+which (not surprisingly) affect two particles. For example:</p>
+
+<p class="centeredImage"><img src="images/c4_op.png" width="579"  border="0"></p>
+
+<p>The weight of the two-electron operators contains the <i>two-electron molecular integrals</i>:</p>
+
+<p class="centeredFormula"> <i>V</i><sub>ijkn</sub> = (1/2)
+(&int; &phi;<sub>i</sub>(1) &phi;<sub>j</sub>(1)(1/r<sub>12</sub>)&phi;<sub>k</sub>(2) &phi;<sub>n</sub>(2)
+d<i>V</i><sub>1</sub> d<i>V</i><sub>2</sub>)
+c<sup>&dagger;</sup><sub>i&sigma;</sub> c<sup>&dagger;</sup><sub>k&tau;</sub>
+c<sub>n&tau;</sub> c<sub>j&sigma;</sub></p>
+
+<p>There is a particular case of the two-electron operator, which does not correspond to electron hops.
+It is the <a name="HUBBARD"><i>Hubbard operator</i></a>:</p>
+
+<p class="centeredImage"><img src="images/Hubbard_op.png" width="579"  border="0"></p>
+
+<p>This operator describes an electron repulsion of particles with the opposite projections of spin 
+and residing on the same spatial orbital. The Hubbard operator contributes to the diagonal term between two 
+identical configurations.</p> 
+
+</li>
+
+</ol>
+
+<p>It can be seen that the amount of possible combinations for the two-electron terms, M, is 
+proportional to N<sup>4</sup>, where N is the number of orbitals. It is obvious that M becomes huge very 
+quickly with an increase of the number of orbitals. One of the ways to overcome this difficulty 
+is to truncate the number of configurations in the wave function. The impurity 
+models (such as the one that is employed in <a href="Game.html">
+Adsorption Game</a>) use a different strategy that briefly can be explained as follows. 
+The two-electron molecular integrals are calculated only if they include the so called correlated orbitals. 
+For the rest of the orbitals, these integrals are set to zero.</p>
+
+</br> </br> 
+
+<div id="backbutton"><a href='#TOP'> Back to top</a></div>
+
+  </div>
+   <div id="footer">
+   <div id="leftfooter">
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   Last updated: February 17, 2024
+   </div>
+   <div id="rightfooter">
+   Contact: <a href="https://www.linkedin.com/in/mykhaylo-krykunov-ab2875132/">Mykhaylo Krykunov</a>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   </div>
+   </div>
+  </div>
+
+
+ </body>
+
+</html>
+
